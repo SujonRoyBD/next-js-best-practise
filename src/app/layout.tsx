@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import 'leaflet/dist/leaflet.css';
+import '../styles/leaflet.css'; 
 
 import {Inter, Poppins} from "next/font/google";
 const inter = Inter({subsets:["latin"], variable: "--font-inter", weight:["100", "200", "300", "400", "500", "600", "700", "800", "900"]})
