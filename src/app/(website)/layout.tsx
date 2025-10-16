@@ -1,3 +1,4 @@
+import AppProvider from '@/components/Provider/AppProvider';
 import React from 'react'
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -5,7 +6,10 @@ interface RootLayoutProps {
 const RootLayout = ({children}:RootLayoutProps) => {
   return (
     <div>
+      <AppProvider>
+
       {children}
+      </AppProvider>
     </div>
   )
 }

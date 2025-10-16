@@ -1,6 +1,7 @@
 
 // import { Button } from '@/components/ui/button'
-import CounterApp from '@/components/CounterApp'
+// import CounterApp from '@/components/CounterApp'
+import PersonalInfo from '@/components/Personal-Info'
 import React from 'react'
 // import dynamic from 'next/dynamic';
 // const Map = dynamic(() => import('@/components/Map'), { ssr: false });
@@ -12,7 +13,8 @@ const Home = () => {
       <h2 className='font-poppins text-primary'>Hello World</h2>
       <Button>Click Me</Button> */}
       {/* <Map/> */}
-      <CounterApp/>
+      {/* <CounterApp/> */}
+      <PersonalInfo/>
     </div>
   )
 }
