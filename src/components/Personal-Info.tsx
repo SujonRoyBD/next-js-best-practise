@@ -4,7 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
+import { toast } from "sonner"
+
+import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
@@ -22,6 +24,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
+import { Toaster } from "./ui/sonner";
 
 const countryNames = ["Dhaka", "Magura", "Faridpur", "Gazipur", "Pabna"];
 
@@ -110,11 +113,32 @@ const PersonalInfo = () => {
             )}
           />
 
-          <Button disabled={isPending} type="submit">
+          <Button  disabled={isPending} type="submit">
             {isPending ? "Submitting..." : "Submit"}
           </Button>
+<Toaster/>
         </form>
       </Form>
+      <div>
+
+
+    <Button
+      variant="outline"
+      onClick={() =>
+        toast("Event has been created", {
+          description: "Sunday, December 03, 2023 at 9:00 AM",
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
+        })
+      }
+    >
+      Show Toast
+    </Button>
+  
+
+      </div>
     </div>
   );
 };

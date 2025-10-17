@@ -2,7 +2,7 @@
 // import { Button } from '@/components/ui/button'
 // import CounterApp from '@/components/CounterApp'
 import PersonalInfo from '@/components/Personal-Info'
-import React from 'react'
+import Table from '@/components/Table/Table';
 // import dynamic from 'next/dynamic';
 // const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
@@ -15,8 +15,9 @@ const Home = () => {
       {/* <Map/> */}
       {/* <CounterApp/> */}
       <PersonalInfo/>
+      <Table/>
     </div>
   )
 }
 
-export default Home
+export default Home;
