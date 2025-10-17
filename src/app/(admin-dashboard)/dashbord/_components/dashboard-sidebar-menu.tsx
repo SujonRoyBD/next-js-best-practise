@@ -1,38 +1,33 @@
-
-import { LayoutDashboard, LogOut,  PackageSearch, Settings } from "lucide-react";
-
 export interface SidebarDataType {
   id: number;
   name: string;
   href: string;
-  icon: React.ElementType;
+  icon: string;
 }
 
 export const SidebarData: SidebarDataType[] = [
   {
     id: 1,
-    name: "Dashbord",
+    name: "Dashboard",
     href: "/dashbord",
-    icon: LayoutDashboard,
+    icon: "/assets/images/img4.jpg",
   },
   {
     id: 2,
-    name: "Oder",
+    name: "Order",
     href: "/order",
-    icon: PackageSearch,
+    icon: "/assets/images/img4.jpg",
   },
   {
     id: 3,
     name: "Setting",
     href: "/setting",
-    icon: Settings,
+    icon: "/assets/images/img4.jpg",
   },
   {
     id: 4,
-    name: "Log-out",
+    name: "Log Out",
     href: "/logout",
-    icon: LogOut,
+    icon: "/assets/images/img4.jpg",
   },
- 
-
-]
+];

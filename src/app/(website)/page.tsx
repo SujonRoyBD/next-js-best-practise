@@ -3,6 +3,7 @@
 // import CounterApp from '@/components/CounterApp'
 import PersonalInfo from '@/components/Personal-Info'
 import Table from '@/components/Table/Table';
+import Setting from '../(admin-dashboard)/setting/page';
 // import dynamic from 'next/dynamic';
 // const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
@@ -16,6 +17,7 @@ const Home = () => {
       {/* <CounterApp/> */}
       <PersonalInfo/>
       <Table/>
+      <Setting/>
     </div>
   )
 }
