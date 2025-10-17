@@ -1,4 +1,5 @@
 import AppProvider from '@/components/Provider/AppProvider';
+import { Toaster } from '@/components/ui/sonner';
 import React from 'react'
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ const RootLayout = ({children}:RootLayoutProps) => {
       <AppProvider>
 
       {children}
+       <Toaster position="top-right" richColors />
       </AppProvider>
     </div>
   )

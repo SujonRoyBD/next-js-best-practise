@@ -2,16 +2,23 @@
 
 import { useFormData } from '@/hooks/useFormData';
 import { useState } from 'react';
+import { toast } from 'sonner'; // Make sure 'sonner' is installed
 
 export default function Setting() {
   const { formData, handleChange, resetForm } = useFormData();
   const [loading, setLoading] = useState(false);
-  const [responseMessage, setResponseMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Simple validation
+    const { firstName, lastName, email, phoneNumber, town, state, experience } = formData;
+    if (!firstName || !lastName || !email || !phoneNumber || !town || !state || !experience) {
+      toast.error('Please fill all fields!');
+      return;
+    }
+
     setLoading(true);
-    setResponseMessage('');
 
     try {
       const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -24,14 +31,14 @@ export default function Setting() {
       console.log('API Response:', result);
 
       if (res.ok) {
-        setResponseMessage('Form submitted successfully!');
+        toast.success('Form submitted successfully!');
         resetForm();
       } else {
-        setResponseMessage('Failed to submit form.');
+        toast.error('Failed to submit form.');
       }
     } catch (error) {
       console.error(error);
-      setResponseMessage('Something went wrong.');
+      toast.error('Something went wrong.');
     } finally {
       setLoading(false);
     }
@@ -157,8 +164,6 @@ export default function Setting() {
           Reset
         </button>
       </div>
-
-      {responseMessage && <p className="mt-2 text-green-600">{responseMessage}</p>}
     </form>
   );
 }
